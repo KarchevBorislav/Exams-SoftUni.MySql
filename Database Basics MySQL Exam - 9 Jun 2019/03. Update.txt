@@ -1,0 +1,13 @@
+SELECT 
+    ec.employee_id
+FROM
+    employees_clients AS ec
+GROUP BY ec.employee_id
+ORDER BY COUNT(*) , ec.employee_id
+LIMIT 1;
+
+UPDATE employees_clients 
+SET 
+    employee_id = 10
+WHERE
+    employee_id = client_id;

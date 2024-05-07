@@ -1,0 +1,10 @@
+SELECT ss.`name`,ss.`manufacturer` FROM `spaceships` AS ss
+JOIN `journeys` AS j
+ON  ss.`id` = j.`spaceship_id`
+JOIN `travel_cards` AS tc
+ON j.`id` = tc.`journey_id`
+JOIN `colonists` AS c
+ON c.`id` = tc.`colonist_id`
+WHERE YEAR(c.`birth_date`) > year(DATE_SUB('2019-01-01',INTERVAL 30 YEAR)) AND tc.job_during_journey = 'Pilot'
+ORDER BY ss.`name` ;
+;

@@ -61,7 +61,7 @@ FOREIGN KEY(`picture_id`)
 REFERENCES `pictures`(`id`) 
 );
 
-CREATE TABLE `products_store`(
+CREATE TABLE `products_stores`(
 `product_id` INT NOT NULL,
 `store_id` INT NOT NULL,
   CONSTRAINT pk_produts_stores PRIMARY KEY (`product_id` , `store_id`),

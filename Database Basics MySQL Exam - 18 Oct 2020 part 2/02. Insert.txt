@@ -1,0 +1,10 @@
+INSERT INTO `products_store`
+SELECT 
+    p.`id` AS  `product_id`,
+    1 AS  `store_id`
+FROM
+    `products` AS p
+        LEFT JOIN
+    `products_store` AS ps ON p.`id` = ps.`product_id`
+WHERE
+    ps.`store_id` IS NULL;

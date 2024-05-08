@@ -1,0 +1,9 @@
+SELECT pr.`name`,pr.`price`,pr.`best_before`,CONCAT(SUBSTR(pr.`description` FROM 1 FOR 10), '...') AS `short_description`,p.`url`
+FROM `products` AS pr
+JOIN `pictures` AS p
+ON pr.`picture_id` = p.`id`
+WHERE  CHAR_LENGTH(pr.`description`) > 100
+AND YEAR(p.`added_on`) < 2019
+AND pr.`price` > 20
+ORDER BY pr.`price` DESC
+;

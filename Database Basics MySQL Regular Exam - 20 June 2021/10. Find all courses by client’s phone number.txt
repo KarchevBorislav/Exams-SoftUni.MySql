@@ -1,0 +1,10 @@
+CREATE FUNCTION  udf_courses_by_client (phone_num VARCHAR (20))
+RETURNS INT 
+DETERMINISTIC
+BEGIN 
+RETURN ( SELECT COUNT(co.`id`) AS `count` FROM `courses` AS co
+ JOIN `clients` AS c
+ ON c.`id` =co.`client_id`
+ WHERE c.`phone_number` = phone_num
+ );
+END

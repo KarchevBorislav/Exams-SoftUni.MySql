@@ -1,0 +1,4 @@
+DELETE  cl FROM `clients` AS cl
+LEFT JOIN `courses`  AS c
+ON cl.`id` = c.`client_id`
+WHERE CHAR_LENGTH(`full_name`) > 3 AND c.`client_id` IS NULL ;

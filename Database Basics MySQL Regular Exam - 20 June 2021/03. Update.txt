@@ -1,0 +1,4 @@
+UPDATE `cars` AS c
+SET `condition` = 'C'
+WHERE c.`condition` NOT LIKE 'C' AND (c.`mileage` >= 800000 OR c.`mileage`IS NULL )
+AND  c.`year` <= 2010 AND c.`make`NOT LIKE'Mercedes-Benz';

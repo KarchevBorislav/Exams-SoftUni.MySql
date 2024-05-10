@@ -1,0 +1,5 @@
+UPDATE `employees` AS e
+JOIN `teams` AS t
+ON t.`leader_id` = e.`id`
+SET e.`salary` = e.`salary` + 1000
+WHERE e.`age` < 40  AND `salary` < 5000;

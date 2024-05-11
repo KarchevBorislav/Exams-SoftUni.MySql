@@ -1,0 +1,6 @@
+SELECT COUNT(p.`category_id`) AS `items_count`,c.`name`,SUM(p.`quantity_in_stock`) AS `total_qantity` FROM `categories`AS c
+JOIN `products` AS p
+ON p.`category_id` = c.`id`
+GROUP BY  c.`id`
+ORDER BY `items_count` DESC,`total_qantity` ASC
+LIMIT 5;

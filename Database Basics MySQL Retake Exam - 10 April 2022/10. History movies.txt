@@ -1,0 +1,16 @@
+CREATE FUNCTION udf_actor_history_movies_count(full_name VARCHAR(50))
+RETURNS INTEGER
+DETERMINISTIC
+BEGIN 
+DECLARE  `actor_name` VARCHAR(100);
+SET `actor_name` := CONCAT(a.`first_name`,' ',a.`last_name`);
+RETURN(SELECT COUNT(m.`id`) AS `count` FROM `movies`AS m
+JOIN `genres_movies` AS gm
+ON gm.`movie_id`= m.`id`
+JOIN `movies_actors` AS ma
+ON ma.`movie_id`= m.`id`
+JOIN `actors` AS a
+
+ON ma.`actor_id` = a.`id`
+WHERE CONCAT(a.`first_name`,' ',a.`last_name`) = full_name   AND gm.`genre_id`LIKE 12);
+END

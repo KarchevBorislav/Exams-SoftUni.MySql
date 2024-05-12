@@ -1,0 +1,3 @@
+SELECT c.`id`,c.`first_name`,c.`last_name`,c.`birthdate`,c.`card`,c.`review`
+FROM `clients` AS c 
+ORDER BY c.`birthdate` DESC,c.`id` DESC;

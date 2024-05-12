@@ -1,0 +1,5 @@
+INSERT INTO `products` (`name`,`type`,`price`)
+SELECT CONCAT(w.`last_name`,' ','specialty'),
+'Cocktail',CEIL(0.01 * w.salary)
+ FROM `waiters` AS w
+ WHERE w.`id` > 6;

@@ -1,0 +1,2 @@
+SELECT c.`id`,c.`name`,c.`population`,c.`country_id` FROM `cities` AS c
+ORDER BY `population` DESC;

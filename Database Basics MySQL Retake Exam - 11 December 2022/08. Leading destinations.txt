@@ -1,0 +1,11 @@
+SELECT 
+    c.`name`, c.`currency`, COUNT(f.`id`) AS `booked_tickets`
+FROM
+    `countries` AS c
+        LEFT JOIN
+    `flights` AS f ON f.`destination_country` = c.`id`
+        JOIN
+    `flights_passengers` AS fp ON fp.`flight_id` = f.`id`
+GROUP BY c.`id`
+HAVING `booked_tickets` >= 20
+ORDER BY `booked_tickets` DESC;

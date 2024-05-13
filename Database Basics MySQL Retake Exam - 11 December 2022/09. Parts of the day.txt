@@ -1,0 +1,24 @@
+SELECT 
+    f.`flight_code`,
+    f.`departure`,
+    CASE
+        WHEN
+            HOUR(f.`departure`) >= 5
+                AND HOUR(f.`departure`) < 12
+        THEN
+            ' Morning'
+        WHEN
+            HOUR(f.`departure`) >= 12
+                AND HOUR(f.`departure`) < 17
+        THEN
+            ' Afternoon'
+        WHEN
+            HOUR(f.`departure`) >= 17
+                AND HOUR(f.`departure`) < 21
+        THEN
+            'Evening'
+        ELSE 'Night'
+    END AS `day_part`
+FROM
+    `flights` AS f
+    ORDER BY `flight_code` DESC;

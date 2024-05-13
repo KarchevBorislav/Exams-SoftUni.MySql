@@ -1,0 +1,9 @@
+SELECT 
+    a.`id`,
+    a.`model`,
+    a.`passengers_capacity`,
+    a.`tank_capacity`,
+    a.`cost`
+FROM
+    `airplanes` AS a
+ORDER BY a.`cost` DESC , a.`id` DESC;

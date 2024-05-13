@@ -1,0 +1,4 @@
+SELECT f.`flight_code`,f.`departure_country`,f.`airplane_id`,f.`departure` FROM `flights` AS f
+WHERE YEAR(f.`departure`) = 2022
+ORDER BY f.`airplane_id` ASC ,f.`flight_code`
+LIMIT 20;

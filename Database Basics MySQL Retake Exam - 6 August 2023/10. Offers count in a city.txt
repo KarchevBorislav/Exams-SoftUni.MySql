@@ -1,0 +1,13 @@
+    
+    CREATE FUNCTION udf_offers_from_city_name (cityName VARCHAR(50))
+    RETURNS INT 
+    DETERMINISTIC
+    BEGIN
+    RETURN(
+SELECT COUNT(p.`city_id`) AS `offers_count` FROM `properties` AS p  
+JOIN  `cities` AS c
+ON c.`id` =  p.`city_id`
+ JOIN `property_offers` AS po
+ON po.`property_id` = p.`id`
+WHERE c.`name` = cityName);
+END

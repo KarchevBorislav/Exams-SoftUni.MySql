@@ -1,0 +1,11 @@
+SELECT 
+    po.`property_id`,
+    po.`agent_id`,
+    po.`price`,
+    po.`offer_datetime`
+FROM
+    `property_offers` AS po
+WHERE
+    YEAR(po.`offer_datetime`) = 2021
+ORDER BY po.`price` ASC
+LIMIT 10;

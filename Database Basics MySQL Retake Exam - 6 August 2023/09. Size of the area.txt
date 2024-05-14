@@ -1,0 +1,12 @@
+SELECT 
+    p.`address`,
+    p.`area`,
+    CASE
+        WHEN p.`area` <= 100 THEN 'small'
+        WHEN p.`area` <= 200 THEN 'medium'
+        WHEN p.`area` <= 500 THEN 'large'
+        ELSE 'extra large'
+    END AS `size`
+FROM
+    `properties` AS p
+    ORDER BY p.`area`ASC ,p.`address` DESC;

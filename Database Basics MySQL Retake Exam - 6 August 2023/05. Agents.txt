@@ -1,0 +1,10 @@
+SELECT 
+    a.`id`,
+    a.`first_name`,
+    a.`last_name`,
+    a.`phone`,
+    a.`email`,
+    a.`city_id`
+FROM
+    `agents` AS a
+ORDER BY a.`city_id` DESC , a.`phone` DESC;

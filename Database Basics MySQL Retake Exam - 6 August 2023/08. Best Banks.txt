@@ -1,0 +1,5 @@
+SELECT pt.`bank_name`,COUNT(pt.`is_successful`) AS `count` FROM `property_transactions`  AS pt
+GROUP BY `bank_name`
+HAVING `count`>= 9
+ORDER BY `count` DESC , `bank_name` ASC;
+;

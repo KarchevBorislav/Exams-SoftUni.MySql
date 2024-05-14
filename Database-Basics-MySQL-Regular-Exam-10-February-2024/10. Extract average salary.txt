@@ -1,0 +1,9 @@
+CREATE FUNCTION udf_average_salary_by_position_name (name VARCHAR(40)) 
+RETURNS DECIMAL(19,2)
+DETERMINISTIC
+BEGIN 
+RETURN(SELECT AVG(w.`salary`) AS `position_average_salary` FROM `workers` AS w
+LEFT JOIN `positions` AS p
+ON p.`id` = w.`position_id`
+WHERE p.`name` = name);
+END

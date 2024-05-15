@@ -1,0 +1,3 @@
+UPDATE `driving_schools` AS ds
+SET `average_lesson_price` = `average_lesson_price` + 30
+WHERE ds.`city_id` = 5 AND ds.`night_time_driving` = 1;

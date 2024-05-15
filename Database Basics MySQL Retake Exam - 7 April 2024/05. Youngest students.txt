@@ -1,0 +1,4 @@
+SELECT CONCAT(s.`first_name`,' ',s.`last_name`) AS `full_name`,
+`age` FROM `students` AS s
+WHERE `age` = (SELECT MIN(`age`)FROM students ) AND `first_name` LIKE '%a%'
+ORDER BY s.`id` ASC ; 

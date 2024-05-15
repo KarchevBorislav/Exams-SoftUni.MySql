@@ -1,0 +1,9 @@
+SELECT c.`name` ,COUNT(ids.`instructor_id`) AS `instructors_count` FROM `cities`AS c
+JOIN `driving_schools` AS ds 
+ON c.`id` = ds.`city_id` 
+LEFT JOIN `instructors_driving_schools` AS ids
+ON ds.`id` = ids.`driving_school_id`
+GROUP BY `name`
+HAVING `instructors_count` > 0
+
+ORDER BY `instructors_count` DESC
